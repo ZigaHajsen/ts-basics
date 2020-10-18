@@ -1,45 +1,17 @@
-/* const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: 'Žiga',
-  age: 29,
-  hobbies: ['Sports', 'Cooking'],
-  role: [2, 'author'],
-}; */
+function combine(input1: number | string, input2: number | string) {
+  let result;
 
-/* const ADMIN = 0;
-const READ_ONLY = 1;
-const AUTHOR = 2; */
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
 
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
+  return result;
 }
 
-const person = {
-  name: 'Žiga',
-  age: 29,
-  hobbies: ['Sports', 'Cooking'],
-  role: Role.ADMIN,
-};
+const combinedAges = combine(29, 25);
+console.log(combinedAges);
 
-// person.role.push('admin'); // not caught by ts
-// person.role[1] = 10;
-
-let favoriteActivities: string[];
-favoriteActivities = ['Sports'];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
-  // console.log(hobby.map());
-}
-
-if (person.role === Role.AUTHOR) {
-  console.log('is author');
-}
+const combinedNames = combine('Žiga', 'Lara');
+console.log(combinedNames);
